@@ -1,0 +1,84 @@
+"""Consignment - Gestión de envíos a vendedores"""
+type Consignment {
+  id: Int!
+  vendorId: Int!
+  description: String!
+  commissionRate: Float!
+  commissionType: String!
+  returnWindowDays: Int!
+  status: String!
+  createdAt: String!
+  updatedAt: String!
+  vendorName: String
+  vendorEmail: String
+}
+
+type ConsignmentItem {
+  id: Int!
+  consignmentId: Int!
+  productVariationId: Int!
+  quantity: Int!
+  unitPrice: Float!
+  status: String!
+  sku: String
+  name: String
+}
+
+type ConsignmentSale {
+  id: Int!
+  consignmentId: Int!
+  consignmentItemId: Int!
+  orderId: Int
+  quantity: Int!
+  salePrice: Float!
+  status: String!
+  paymentStatus: String
+  createdAt: String!
+}
+
+type ConsignmentReturn {
+  id: Int!
+  consignmentId: Int!
+  consignmentItemId: Int!
+  returnReference: String!
+  quantity: Int!
+  reason: String!
+  status: String!
+  createdAt: String!
+  updatedAt: String!
+}
+
+type ConsignmentPayment {
+  id: Int!
+  consignmentId: Int!
+  amount: Float!
+  commissionAmount: Float!
+  salesAmount: Float!
+  paymentPeriod: String!
+  paymentDate: String!
+  status: String!
+  paidAt: String
+  createdAt: String!
+}
+
+type ConsignmentCollection {
+  items: [Consignment]!
+  total: Int!
+}
+
+type Query {
+  """Obtener lista de consignments"""
+  consignments(filters: [FilterInput]): ConsignmentCollection
+  
+  """Obtener detalle de un consignment"""
+  consignmentDetail(id: Int!): Consignment
+  
+  """Obtener items de un consignment"""
+  consignmentItems(consignmentId: Int!): [ConsignmentItem]
+  
+  """Obtener ventas de un consignment"""
+  consignmentSales(consignmentId: Int!): [ConsignmentSale]
+  
+  """Obtener devoluciones de un consignment"""
+  consignmentReturns(consignmentId: Int!): [ConsignmentReturn]
+}

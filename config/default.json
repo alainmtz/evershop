@@ -1,0 +1,27 @@
+{
+  "shop": {
+    "language": "es",
+    "currency": "USD"
+  },
+  "system": {
+    "extensions": [
+      {
+        "name": "sample",
+        "resolve": "extensions/sample",
+        "enabled": true
+      },
+      {
+        "name": "consignments",
+        "resolve": "extensions/consignments",
+        "enabled": true
+      },
+      {
+        "name": "product_review",
+        "resolve": "node_modules/@evershop/product_review",
+        "enabled": true,
+        "priority": 10
+      }
+    ],
+    "theme": "sample"
+  }
+}

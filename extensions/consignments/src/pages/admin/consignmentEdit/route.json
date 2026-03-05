@@ -1,0 +1,7 @@
+{
+  "resolveComponent": "ConsignmentEdit",
+  "methods": ["GET"],
+  "path": "/consignments/:id/edit",
+  "authenticate": true,
+  "rbac": ["consignments.manage"]
+}

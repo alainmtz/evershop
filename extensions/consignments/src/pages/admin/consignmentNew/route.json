@@ -1,0 +1,7 @@
+{
+  "resolveComponent": "ConsignmentNew",
+  "methods": ["GET"],
+  "path": "/consignments/new",
+  "authenticate": true,
+  "rbac": ["consignments.manage"]
+}

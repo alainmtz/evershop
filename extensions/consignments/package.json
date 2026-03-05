@@ -1,0 +1,7 @@
+{
+  "name": "@evershop/consignments",
+  "version": "1.0.0",
+  "description": "Consignments module with commissions and returns management",
+  "type": "module",
+  "main": "src/bootstrap.ts"
+}

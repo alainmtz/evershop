@@ -1,0 +1,6 @@
+{
+  "methods": ["PUT"],
+  "path": "/consignments/:id",
+  "authenticate": true,
+  "rbac": ["consignments.manage"]
+}
